@@ -1,0 +1,49 @@
+/* game board table */
+#board td {
+  width: 50px;
+  height: 50px;
+  border: solid 1px #666;
+}
+
+/* pieces are div within game table cells: draw as colored circles */
+.piece {
+  position: absolute;
+  margin-top: -20px;
+  margin-left: 5px;
+  width: 40px;
+  height: 40px;
+  /* make into circles */
+  border-radius: 50%;
+  /* used example for colon eye from 
+     https://developer.mozilla.org/en-US/docs/Web/CSS/animation */
+  -webkit-animation: 0.5s linear 0s move_piece;
+          animation: 0.5s linear 0s move_piece;
+}
+
+/* used example for colon eye from 
+   https://developer.mozilla.org/en-US/docs/Web/CSS/animation */
+@-webkit-keyframes move_piece { 
+  from { margin-top: -400px; } to { margin-top: -20px; }
+}
+@keyframes move_piece { 
+  from { margin-top: -400px; } to { margin-top: -20px; } 
+}
+
+/* make pieces red/blue, depending on player 1/2 piece */
+.player1 {
+  background-color: red;
+}
+
+.player2 {
+  background-color: blue;
+}
+
+/* column-top is table row of clickable areas for each column */
+
+#column-top td {
+  border: dashed 1px lightgray;
+}
+
+#column-top td:hover {
+  background-color: gold;
+}
